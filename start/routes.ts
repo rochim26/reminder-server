@@ -18,13 +18,12 @@
 |
 */
 
+// refactoring code => merapihkan kode => terstruktur
+// melakukan apa? dan dimana?
+
 import Route from "@ioc:Adonis/Core/Route";
-
-Route.post("user/login", "UsersController.login");
-Route.post("user/daftar", "UsersController.daftar");
-Route.resource("user", "UsersController").apiOnly();
-
-Route.resource("tugas", "TugasesController").apiOnly();
+import "./routes/tugas";
+import "./routes/user";
 
 Route.get("/", async ({ view }) => {
   return view.render("welcome");
